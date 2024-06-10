@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNSW Rocketry - Gallery</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="gallery.css" />
+    <!--Imports a model-viewer JavaScript code -->
+    <!--Handler for displaying the 3d model (not using three.js, i couldnt get it to work with high def archangel renders) -->
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Header that appears when scrolling up, hides when scrolling down -->
+    <header id="navbar" class="navbar">
+      <a href="home.html" class="brand">UNSW Rocketry</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="home.html">Home</a>
+          <a href="team.html">Team</a>
+          <a href="projects.html">Projects</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="thesis.html">Thesis</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <script>
+      // JavaScript for hiding nav bar when scrolling down, and showing nav bar when scrolling up
+      var lastScrollTop = 0;
+      var isScrollingUp = false;
+
+      navbar = document.getElementById("navbar");
+
+      window.addEventListener("scroll", function () {
+        var scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop <= 0) {
+          // At the top of the page
+          navbar.style.top = "0";
+          isScrollingUp = true;
+        } else if (scrollTop < lastScrollTop && !isScrollingUp) {
+          // Scrolling up
+          navbar.style.top = "0";
+          isScrollingUp = true;
+        } else if (scrollTop > lastScrollTop && isScrollingUp) {
+          // Scrolling down
+          navbar.style.top = "-80px";
+          isScrollingUp = false;
+        }
+
+        lastScrollTop = scrollTop;
+      });
+
+      // Javascript for changing background color of nav bar from transparent to black after scrolling past the first section
+      const nav = document.querySelector(".navbar");
+      const section1 = document.querySelector(".section1");
+
+      window.onscroll = function () {
+        if (document.documentElement.scrollTop >= 300) {
+          nav.classList.add("nav-colored");
+          nav.classList.remove("nav-transparent");
+        } else {
+          nav.classList.add("nav-transparent");
+          nav.classList.remove("nav-colored");
+        }
+      };
+    </script>
+
+    <!-- Main Banner Section -->
+    <section class="section1">
+      <div class="image1">
+        <img src="gallery/images/1.jpg" />
+      </div>
+      <div class="content active">
+        <h1><br /><span>Gallery</span></h1>
+        <p></p>
+      </div>
+      <div class="media-icons">
+        <a href="https://www.facebook.com/UNSWRocketry"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="https://www.instagram.com/unswrocketry/"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://www.linkedin.com/company/unsw-rocketry"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+      </div>
+
+      <script type="text/javascript">
+        //Resposnsive navigation menu script
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+          menuBtn.classList.toggle("active");
+          navigation.classList.toggle("active");
+        });
+      </script>
+    </section>
+
+    <!-- Section 3 Fading in on scroll, 3 columns of photos -->
+    <section class="section3">
+      <div class="container reveal">
+        <h2 class="header">RECENT PHOTOS</h2>
+        <div class="box">
+          <!-- Photo column 1 -->
+          <div class="dream">
+            <img src="gallery/images/2.jpg" alt="Gallery Photo" />
+            <img src="gallery/images/3.jpg" alt="Gallery Photo" />
+            <img src="gallery/images/4.jpg" alt="Gallery Photo" />
+            <img src="gallery/images/5.jpg" alt="Gallery Photo" />
+            <img src="gallery/images/6.jpg" alt="Gallery Photo" />
+          </div>
+          <!-- Photo column 2 -->
+          <div class="dream">
+            <img src="gallery/images/7.jpg" alt="Gallery Photo" />
+            <img src="gallery/images/8.jpg" alt="Gallery Photo" />
+            <img src="gallery/images/9.jpg" alt="Gallery Photo" />
+            <img src="gallery/images/10.jpg" alt="Gallery Photo" />
+            <img src="gallery/images/11.jpg" alt="Gallery Photo" />
+          </div>
+          <!-- Photo column 3 -->
+          <div class="dream">
+            <img src="gallery/images/12.jpg" alt="Gallery Photo" />
+            <img src="gallery/images/13.jpg" alt="Gallery Photo" />
+            <img src="gallery/images/14.jpg" alt="Gallery Photo" />
+            <img src="gallery/images/15.jpg" alt="Gallery Photo" />
+            <img src="gallery/images/16.jpg" alt="Gallery Photo" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Javascript for controlling fade in of components with .reveal class tag-->
+    <script type="text/javascript">
+      window.addEventListener("scroll", reveal);
+
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+
+        for (var i = 0; i < reveals.length; i++) {
+          var windowheight = window.innerHeight;
+          var revealtop = reveals[i].getBoundingClientRect().top;
+          var revealpoint = 150;
+
+          if (revealtop < windowheight - revealpoint) {
+            reveals[i].classList.add("active");
+          } else {
+            reveals[i].classList.remove("active");
+          }
+        }
+      }
+    </script>
+
+    <!-- Footer -->
+    <section
+      class="footer"
+      style="
+        background-color: #050505;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <div
+        style="
+          text-align: center;
+          height: 50px;
+          color: #232323;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8em;
+        "
+      >
+        &copy; Nicholas Piscioneri - UNSW Rocketry - 2023 - All Rights Reserved
+      </div>
+    </section>
+  </body>
+</html>

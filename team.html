@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNSW Rocketry - Team</title>
+    <link rel="stylesheet" href="team.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+  </head>
+</html>
+
+<body>
+  <!-- Header that appears when scrolling up, hides when scrolling down -->
+  <header id="navbar" class="navbar">
+    <a href="home.html" class="brand">UNSW Rocketry</a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+      <div class="navigation-items">
+        <a href="home.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="projects.html">Projects</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="thesis.html">Thesis</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    // JavaScript for hiding nav bar when scrolling down, and showing nav bar when scrolling up
+    var lastScrollTop = 0;
+    var isScrollingUp = false;
+
+    navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", function () {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop <= 0) {
+        // At the top of the page
+        navbar.style.top = "0";
+        isScrollingUp = true;
+      } else if (scrollTop < lastScrollTop && !isScrollingUp) {
+        // Scrolling up
+        navbar.style.top = "0";
+        isScrollingUp = true;
+      } else if (scrollTop > lastScrollTop && isScrollingUp) {
+        // Scrolling down
+        navbar.style.top = "-80px";
+        isScrollingUp = false;
+      }
+
+      lastScrollTop = scrollTop;
+    });
+
+    // Javascript for changing background color of nav bar from transparent to black after scrolling past the first section
+    const nav = document.querySelector(".navbar");
+    const section1 = document.querySelector(".section1");
+
+    window.onscroll = function () {
+      if (document.documentElement.scrollTop >= 300) {
+        nav.classList.add("nav-colored");
+        nav.classList.remove("nav-transparent");
+      } else {
+        nav.classList.add("nav-transparent");
+        nav.classList.remove("nav-colored");
+      }
+    };
+  </script>
+
+  <!-- Main Banner Section -->
+  <section class="section1">
+    <div class="image1">
+      <img src="team/images/1.jpg" />
+    </div>
+    <div class="content active">
+      <h1><br /><span>Team</span></h1>
+      <p></p>
+    </div>
+    <div class="media-icons">
+      <a href="https://www.facebook.com/UNSWRocketry"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+      <a href="https://www.instagram.com/unswrocketry/"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a href="https://www.linkedin.com/company/unsw-rocketry"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+    </div>
+
+    <script type="text/javascript">
+      //Resposnsive navigation menu script
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+    </script>
+  </section>
+
+  <!-- Row 1 of team members -->
+  <section class="section2">
+    <div class="container reveal">
+      <h2>Executive Team Members</h2>
+      <div class="cards">
+        <div class="text-card">
+          <h3>Aayush Thapa</h3>
+          <p>
+            <br />
+            <img src="team/images/2.jpg" class="headshot" />
+            <br />
+            <br />
+            President
+            <br />
+            <br />
+          </p>
+        </div>
+
+        <div class="text-card">
+          <h3>Naomi Aravena</h3>
+          <p>
+            <br />
+            <img src="team/images/3.jpg" class="headshot" />
+            <br />
+            <br />
+            Team Secretary
+            <br />
+            <br />
+          </p>
+        </div>
+        <div class="text-card">
+          <h3>Shriya Kodre</h3>
+          <p>
+            <br />
+            <img src="team/images/4.jpg" class="headshot" />
+            <br />
+            <br />
+            Treasurer
+            <br />
+            <br />
+          </p>
+        </div>
+        <div class="text-card">
+          <h3>Tasneem Fatima</h3>
+          <p>
+            <br />
+            <img src="team/images/5.jpg" class="headshot" />
+            <br />
+            <br />
+            Vice President
+            <br />
+            <br />
+          </p>
+        </div>
+        <div class="text-card">
+          <h3>Nicholas Piscioneri</h3>
+          <p>
+            <br />
+            <img src="team/images/6.jpg" class="headshot" />
+            <br />
+            <br />
+            Business Lead
+            <br />
+            <br />
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Row 2 of team members -->
+  <section class="section2">
+    <div class="container reveal">
+      <div class="cards">
+        <div class="text-card">
+          <h3>Lachlan Bramble</h3>
+          <p>
+            <br />
+            <img src="team/images/7.jpg" class="headshot" />
+            <br />
+            <br />
+            Chief Technical Officer
+            <br />
+            <br />
+          </p>
+        </div>
+
+        <div class="text-card">
+          <h3>Ram Ganesh</h3>
+          <p>
+            <br />
+            <img src="team/images/8.jpg" class="headshot" />
+            <br />
+            <br />
+            Avionics Lead
+            <br />
+            <br />
+          </p>
+        </div>
+        <div class="text-card">
+          <h3>Lara McCudden</h3>
+          <p>
+            <br />
+            <img src="team/images/9.jpg" class="headshot" />
+            <br />
+            <br />
+            Operations Lead
+            <br />
+            <br />
+          </p>
+        </div>
+        <div class="text-card">
+          <h3>Sam Wilson</h3>
+          <p>
+            <br />
+            <img src="team/images/10.jpg" class="headshot" />
+            <br />
+            <br />
+            Recovery Lead
+            <br />
+            <br />
+          </p>
+        </div>
+        <div class="text-card">
+          <h3>Amene Ensaf</h3>
+          <p>
+            <br />
+            <img src="team/images/11.jpg" class="headshot" />
+            <br />
+            <br />
+            Manufacturing Lead
+            <br />
+            <br />
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Row 3 of team members -->
+  <section class="section2">
+    <div class="container reveal">
+      <div class="cards">
+        <div class="text-card">
+          <h3>Eric Mueller</h3>
+          <p>
+            <br />
+            <img src="team/images/12.jpg" class="headshot" />
+            <br />
+            <br />
+            Team Advisor
+            <br />
+            <br />
+          </p>
+        </div>
+
+        <div class="text-card">
+          <h3>Margarita Piperias</h3>
+          <p>
+            <br />
+            <img src="team/images/13.jpg" class="headshot" />
+            <br />
+            <br />
+            Team Advisor
+            <br />
+            <br />
+          </p>
+        </div>
+        <div class="text-card">
+          <h3>Darson Li</h3>
+          <p>
+            <br />
+            <img src="team/images/14.jpg" class="headshot" />
+            <br />
+            <br />
+            Academic Supervisor
+            <br />
+            <br />
+          </p>
+        </div>
+        <div class="text-card">
+          <h3>Garth Pierce</h3>
+          <p>
+            <br />
+            <img src="team/images/15.jpg" class="headshot" />
+            <br />
+            <br />
+            Technical Supervisor
+            <br />
+            <br />
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Row 4 of team members -->
+  <!-- <section class="section2">
+    <div class="container reveal">
+      <div class="cards">
+        <div class="text-card">
+          <h3>Dr John Olsen</h3>
+          <p>
+            <br />
+            <img src="team/images/14.jpg" class="headshot" />
+            <br />
+            <br />
+            Teechnical Supervisor
+            <br />
+            <br />
+          </p>
+        </div> -->
+        <!-- <div class="text-card">
+          <h3>Joseph Stalin</h3>
+          <p>
+            <br />
+            <img src="team/images/15.jpg" class="headshot" />
+            <br />
+            <br />
+            Together, we push the boundaries and redefine what's possible in the
+            world of rocketry.
+            <br />
+            <br />
+          </p>
+        </div>
+        <div class="text-card">
+          <h3>Joseph Stalin</h3>
+          <p>
+            <br />
+            <img src="team/images/16.jpg" class="headshot" />
+            <br />
+            <br />
+            Together, we push the boundaries and redefine what's possible in the
+            world of rocketry.
+            <br />
+            <br />
+          </p>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Row 4 of team members -->
+  <!-- <section class="section2">
+    <div class="container reveal">
+      <div class="cards">
+        <div class="text-card">
+          <h3>Joseph Stalin</h3>
+          <p>
+            <br />
+            <img src="team/images/17.jpg" class="headshot" />
+            <br />
+            <br />
+            Together, we push the boundaries and redefine what's possible in the
+            world of rocketry.
+            <br />
+            <br />
+          </p>
+        </div>
+
+        <div class="text-card">
+          <h3>Joseph Stalin</h3>
+          <p>
+            <br />
+            <img src="team/images/18.jpg" class="headshot" />
+            <br />
+            <br />
+            Together, we push the boundaries and redefine what's possible in the
+            world of rocketry.
+            <br />
+            <br />
+          </p>
+        </div>
+        <div class="text-card">
+          <h3>Joseph Stalin</h3>
+          <p>
+            <br />
+            <img src="team/images/19.jpg" class="headshot" />
+            <br />
+            <br />
+            Together, we push the boundaries and redefine what's possible in the
+            world of rocketry.
+            <br />
+            <br />
+          </p>
+        </div>
+        <div class="text-card">
+          <h3>Joseph Stalin</h3>
+          <p>
+            <br />
+            <img src="team/images/20.jpg" class="headshot" />
+            <br />
+            <br />
+            Together, we push the boundaries and redefine what's possible in the
+            world of rocketry.
+            <br />
+            <br />
+          </p>
+        </div>
+        <div class="text-card">
+          <h3>Joseph Stalin</h3>
+          <p>
+            <br />
+            <img src="team/images/21.jpg" class="headshot" />
+            <br />
+            <br />
+            Together, we push the boundaries and redefine what's possible in the
+            world of rocketry.
+            <br />
+            <br />
+          </p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Javascript for controlling fade in of components with .reveal class tag-->
+  <script type="text/javascript">
+    window.addEventListener("scroll", reveal);
+
+    function reveal() {
+      var reveals = document.querySelectorAll(".reveal");
+
+      for (var i = 0; i < reveals.length; i++) {
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 150;
+
+        if (revealtop < windowheight - revealpoint) {
+          reveals[i].classList.add("active");
+        } else {
+          reveals[i].classList.remove("active");
+        }
+      }
+    }
+  </script>
+
+  <!-- Footer -->
+  <section
+    class="footer"
+    style="
+      background-color: #050505;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    "
+  >
+    <div
+      style="
+        text-align: center;
+        height: 50px;
+        color: #232323;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8em;
+      "
+    >
+      &copy; Nicholas Piscioneri - UNSW Rocketry - 2023 - All Rights Reserved
+    </div>
+  </section>
+</body>

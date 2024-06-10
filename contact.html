@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNSW Rocketry - Contact</title>
+    <link rel="stylesheet" href="contact.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+  </head>
+</html>
+
+<body>
+  <!-- Header that appears when scrolling up, hides when scrolling down -->
+  <header id="navbar" class="navbar">
+    <a href="home.html" class="brand">UNSW Rocketry</a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+      <div class="navigation-items">
+        <a href="home.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="projects.html">Projects</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="thesis.html">Thesis</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    // JavaScript for hiding nav bar when scrolling down, and showing nav bar when scrolling up
+    var lastScrollTop = 0;
+    var isScrollingUp = false;
+
+    navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", function () {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop <= 0) {
+        // At the top of the page
+        navbar.style.top = "0";
+        isScrollingUp = true;
+      } else if (scrollTop < lastScrollTop && !isScrollingUp) {
+        // Scrolling up
+        navbar.style.top = "0";
+        isScrollingUp = true;
+      } else if (scrollTop > lastScrollTop && isScrollingUp) {
+        // Scrolling down
+        navbar.style.top = "-80px";
+        isScrollingUp = false;
+      }
+
+      lastScrollTop = scrollTop;
+    });
+
+    // Javascript for changing background color of nav bar from transparent to black after scrolling past the first section
+    const nav = document.querySelector(".navbar");
+    const section1 = document.querySelector(".section1");
+
+    window.onscroll = function () {
+      if (document.documentElement.scrollTop >= 300) {
+        nav.classList.add("nav-colored");
+        nav.classList.remove("nav-transparent");
+      } else {
+        nav.classList.add("nav-transparent");
+        nav.classList.remove("nav-colored");
+      }
+    };
+  </script>
+
+  <!-- Main Banner Section -->
+  <section class="section1">
+    <div class="image1">
+      <img src="contact/images/1.jpg" />
+    </div>
+    <div class="content active">
+      <h1><br /><span>Contact Us</span></h1>
+      <p></p>
+    </div>
+    <div class="media-icons">
+      <a href="https://www.facebook.com/UNSWRocketry"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+      <a href="https://www.instagram.com/unswrocketry/"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a href="https://www.linkedin.com/company/unsw-rocketry"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+    </div>
+
+    <script type="text/javascript">
+      //Resposnsive navigation menu script
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+    </script>
+  </section>
+
+  <!-- Contact us Section -->
+  <section class="section2">
+    <div class="container reveal">
+      <h2>
+        If you have any questions or want to learn more – or if you are
+        interested in starting a relationship with us, please get in touch.
+        <br />
+        <br />
+      </h2>
+      <div class="cards">
+        <div class="text-card">
+          <a href="mailto:unswrocketry@gmail.com">EMAIL</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <section
+    class="footer"
+    style="
+      background-color: #050505;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    "
+  >
+    <div
+      style="
+        text-align: center;
+        height: 50px;
+        color: #232323;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8em;
+      "
+    >
+      &copy; Nicholas Piscioneri - UNSW Rocketry - 2023 - All Rights Reserved
+    </div>
+  </section>
+</body>

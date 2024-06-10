@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNSW Rocketry - Home</title>
+    <link rel="stylesheet" href="home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header that appears when scrolling up, hides when scrolling down -->
+    <header id="navbar" class="navbar">
+      <a href="home.html" class="brand">UNSW Rocketry</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="home.html">Home</a>
+          <a href="team.html">Team</a>
+          <a href="projects.html">Projects</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="thesis.html">Thesis</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <script>
+      // JavaScript for hiding nav bar when scrolling down, and showing nav bar when scrolling up
+      var lastScrollTop = 0;
+      var isScrollingUp = false;
+
+      navbar = document.getElementById("navbar");
+
+      window.addEventListener("scroll", function () {
+        var scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop <= 0) {
+          // At the top of the page
+          navbar.style.top = "0";
+          isScrollingUp = true;
+        } else if (scrollTop < lastScrollTop && !isScrollingUp) {
+          // Scrolling up
+          navbar.style.top = "0";
+          isScrollingUp = true;
+        } else if (scrollTop > lastScrollTop && isScrollingUp) {
+          // Scrolling down
+          navbar.style.top = "-80px";
+          isScrollingUp = false;
+        }
+
+        lastScrollTop = scrollTop;
+      });
+
+      // Javascript for changing background color of nav bar from transparent to black after scrolling past the first section
+      const nav = document.querySelector(".navbar");
+      const section1 = document.querySelector(".section1");
+
+      window.onscroll = function () {
+        if (document.documentElement.scrollTop >= 700) {
+          nav.classList.add("nav-colored");
+          nav.classList.remove("nav-transparent");
+        } else {
+          nav.classList.add("nav-transparent");
+          nav.classList.remove("nav-colored");
+        }
+      };
+    </script>
+
+    <!-- Main landing section, background video with overlayed text and collapsible menu options -->
+    <section class="section1">
+      <video
+        class="video-slide active"
+        src="home/video/1.mp4"
+        preload="auto"
+        autoplay="true"
+        muted
+        loop
+      ></video>
+      <video
+        class="video-slide"
+        src="home/video/2.mp4"
+        preload="auto"
+        autoplay="true"
+        muted
+        loop
+      ></video>
+      <video
+        class="video-slide"
+        src="home/video/3.mp4"
+        preload="auto"
+        autoplay="true"
+        muted
+        loop
+      ></video>
+      <!-- <video
+        class="video-slide"
+        src="home/video/4.mp4"
+        preload="auto"
+        autoplay="true"
+        muted
+        loop
+      ></video>
+      <video
+        class="video-slide"
+        src="home/video/5.mp4"
+        preload="auto"
+        autoplay="true"
+        muted
+        loop
+      ></video> -->
+      <div class="content active">
+        <h1>Project<br /><span>Archangel</span></h1>
+        <p>
+          Introducting our latest team rocket, Archangel. Meticulously
+          engineered from inception, this exceptional vehicle is purpose-built
+          to compete in the Spaceport America Cup.
+        </p>
+        <a href="projects.html" class="read-more-button">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Spaceport<br /><span>Las Cruces</span></h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+          consequuntur nisi quas. Voluptas deleniti consequatur pariatur
+          adipisci tempora nemo fugiat atque laboriosam nihil nobis doloribus ex
+          cupiditate minima, illum quis?
+        </p>
+        <a href="#" class="read-more-button">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Manufacturing:<br /><span>T.E.S.T.I.N.G</span></h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+          consequuntur nisi quas. Voluptas deleniti consequatur pariatur
+          adipisci tempora nemo fugiat atque laboriosam nihil nobis doloribus ex
+          cupiditate minima, illum quis?
+        </p>
+        <a href="#" class="read-more-button">Read More</a>
+      </div>
+      <!-- <div class="content">
+        <h1>Experimental<br /><span>Rocketry</span></h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+          consequuntur nisi quas. Voluptas deleniti consequatur pariatur
+          adipisci tempora nemo fugiat atque laboriosam nihil nobis doloribus ex
+          cupiditate minima, illum quis?
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Experimental<br /><span>Rocketry</span></h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+          consequuntur nisi quas. Voluptas deleniti consequatur pariatur
+          adipisci tempora nemo fugiat atque laboriosam nihil nobis doloribus ex
+          cupiditate minima, illum quis?
+        </p>
+        <a href="#">Read More</a>
+      </div> -->
+      <div class="media-icons">
+        <a href="https://www.facebook.com/UNSWRocketry"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="https://www.instagram.com/unswrocketry/"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://www.linkedin.com/company/unsw-rocketry"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <!-- <div class="nav-btn"></div>
+        <div class="nav-btn"></div> -->
+      </div>
+    </section>
+
+    <script type="text/javascript">
+      //Resposnsive navigation menu script
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+
+      //Java script for video
+      const btns = document.querySelectorAll(".nav-btn");
+      const slides = document.querySelectorAll(".video-slide");
+      const contents = document.querySelectorAll(".content");
+
+      var sliderNav = function (manual) {
+        btns.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+          content.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+      };
+
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          sliderNav(i);
+        });
+      });
+    </script>
+
+    <!-- Section 2 Fading in on scroll, 3 text cards in a container, adjusts to window size -->
+    <section class="section2">
+      <div class="container reveal">
+        <h2>We design, engineer and launch rockets!</h2>
+        <div class="cards">
+          <div class="text-card">
+            <h3>Engineering Excellence</h3>
+            <p>
+              <br />
+              <img src="home/images/1.jpg" class="image1" />
+              <br />
+              <br />
+              Together, we push the boundaries and redefine what's possible in
+              the world of rocketry.
+              <br />
+              <br />
+              Join us on a journey fueled by innovation, where we strive for
+              excellence in every aspect of aerospace, mechanical and electrical
+              engineering.
+              <br />
+              <br />
+            </p>
+          </div>
+          <div class="text-card">
+            <h3>Ignite Your Education Journey</h3>
+            <p>
+              <br />
+              <img src="home/images/2.jpg" class="image2" />
+              <br />
+              <br />
+              Embark on an educational adventure with us, where knowledge meets
+              innovation.
+              <br />
+              <br />
+              Join our student-led rocketry team to fuel your passion for
+              learning and explore the captivating world of aerospace. Get ready
+              to soar to new heights as we empower you with invaluable
+              educational experiences and opportunities.
+              <br />
+              <br />
+            </p>
+          </div>
+          <div class="text-card">
+            <h3>Safety First, Always</h3>
+            <p>
+              <br />
+              <img src="home/images/3.jpg" class="image3" />
+              <br />
+              <br />
+              Safety Above All Else.
+              <br />
+              <br />
+              With strong commitment to the highest safety standards, learn to
+              execute launches with precision and caution.
+              <br />
+              <br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Javascript for controlling fade in of components with .reveal class tag-->
+    <script type="text/javascript">
+      window.addEventListener("scroll", reveal);
+
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+
+        for (var i = 0; i < reveals.length; i++) {
+          var windowheight = window.innerHeight;
+          var revealtop = reveals[i].getBoundingClientRect().top;
+          var revealpoint = 150;
+
+          if (revealtop < windowheight - revealpoint) {
+            reveals[i].classList.add("active");
+          } else {
+            reveals[i].classList.remove("active");
+          }
+        }
+      }
+    </script>
+
+    <!-- banner photo -->
+    <section class="section-photo1">
+      <div class="photo1">
+        <img src="home/images/4.jpg" />
+      </div>
+    </section>
+
+    <!-- Section 3 Fading in on scroll, 3 text cards in a container, adjusts to window size -->
+    <section class="section3">
+      <div class="container reveal">
+        <h2>
+          Think you've got what it takes?
+          <br />
+          <br />
+        </h2>
+        <div class="cards">
+          <div class="text-card">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSd_5QxoQrzF4WR6mykrKJC2W9j5RVY9yVX8u0ZGEK7-3vQnyg/viewform?embedded=true&pli=1&fbclid=PAAaaNeyjmdi073f4WR_XNQThxjOE7oI7c-7m1Mlhu7LMlTAO9wmGOcu-2W5o_aem_ATQt9TgzDP2xs-ZwBzgt4hOkT9r_AF94WjaLqyxrHP_Xvq2DINvw8hDjaoL2ygoIAnc"
+              class="read-more-button"
+              >Sign Up</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section
+      class="footer"
+      style="
+        background-color: #050505;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <div
+        style="
+          text-align: center;
+          height: 50px;
+          color: #232323;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8em;
+        "
+      >
+        &copy; Nicholas Piscioneri - UNSW Rocketry - 2023 - All Rights Reserved
+      </div>
+    </section>
+  </body>
+</html>
