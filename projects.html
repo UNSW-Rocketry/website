@@ -258,7 +258,7 @@
               <img src="projects//archangel/images/2.jpg" class="image1" />
               <br />
               <br />
-              In their first time participating in the prestigious Spaceport America Cup (SAC), the UNSW Rocketry Team came third in the 30,000ft category and won the Best Video Challenge. The team managed to reach an altitude of 27,233 feet with their rocket Archangel.
+              The team's entry into the AURC 2024, aimed at upskilling team members following the departure of other experienced team members. The rocket gave invaluable experience to the team, building it up for future more ambitious projects that the team is working towards now.
               <br />
               <br />
               <br />
@@ -266,13 +266,18 @@
             </p>
           </div>
           <div class="text-card">
-            <h3>Air Brakes</h3>
+            <h3>Aerostructures</h3>
             <p>
               <br />
               <img src="projects//archangel/images/3.jpg" class="image2" />
               <br />
               <br />
-              Our air brake system was designed and manufactured from start to finish in-house. They were meticulously designed to propel the team closer to winning SAC, however during test flights, the team realised that we were undershooting, and as a result decided to remove it. This gave us a mass reduction of 1.5 kg and resulted in us getting closer to the desired altitude. 
+              At the core of Zenith’s design philosophy are three pivotal state-points: achieving a target altitude above ground level (AGL), adhering to the payload mass constraints, and optimising the vehicle’s overall form factor.
+              Zenith’s airframe is a testament to the team’s pursuit of aerodynamic optimisation whilst
+              ensuring structural integrity. The airframe was designed to be as thin and light as possible,
+              whilst being sufficiently strong to withstand the stresses of transonic flight. A majority of
+              Zeniths airframe is manufactured from 1.5 mm thick Carbon Fibre Composite, with areas
+              experiencing high bending stresses, such as the fuselage coupler, being 2 mm thick. Moreover, the rocket’s fins are sufficiently sized to ensure a stability caliber of no less than 1.5 throughout the flight, even under a variety of wind speed conditions, ensuring a safe and stable ascent trajectory.
               <br />
               <br />
               <br />
@@ -286,7 +291,99 @@
               <img src="projects//archangel/images/4.jpg" class="image3" />
               <br />
               <br />
-              Inside the rocket were two flight computers measuring barometric and inertial data, which tells us how high the rocket flew. These Computers also trigger the separation of the rocket sections, allowing the parachutes out. We also use a GPS telemetry unit to tell us where the rocket is at all times, placed inside a fibreglass nose-cone for radio transparency.
+              The Avionics System is composed to several Independently functioning subsystems designed
+              either to fill differing roles or provide functional redundancy. The current Avionics system
+              consists of two COTS flight computers for parachute ejection, one SRAD flight computer for
+              passive data collection, A COTS GNSS tracker and a COTS flight camera setup. The system
+              overall is very similar to the originally plan for avionics, with the only exception being a dialling back of ambition regarding SRAD computers, most notably SRAD telemetry and GPS tracking.
+              <br />
+              <br />
+              <br />
+              <br />
+            </p>
+          </div>
+          <div class="text-card">
+            <h3>Recovery</h3>
+            <p>
+              <br />
+              <img src="projects//archangel/images/4.jpg" class="image3" />
+              <br />
+              <br />
+             A dual separation dual deployment method has been utilised to reduce shock loading, with redundant black powder charges. Black powder quantities were determined through successful ground testing, and parachute sizes were calculated using a python script to reduce drift on descent. Hemispherical chutes were used for their high drag coefficient, which was estimated to be 1.5 based on previous experimental data and CFD simulations.             
+              <br />
+              <br />
+              <br />
+              <br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+      <section class="section2">
+      <h2 class="project-title">PROJECT TOM N JERRY</h2>
+      <div class="model-container">
+        <!-- 3D object -->
+        <!-- This inserts the 3D object inside the model-viewer container -->
+
+        <model-viewer
+          src="projects/archangel/Archangel Website Render.gltf"
+          alt="3D Render of Project Archangel"
+          auto-rotate
+          camera-controls
+          ar
+          ios-src="projects/archangel/Archangel Website Render.gltf"
+          camera-orbit="0deg 90deg 0m"
+        ></model-viewer>
+      </div>
+
+      <script>
+        // javascript to change model orientation if device has width less than 900px
+        // Get the model viewer element
+        const modelViewer = document.querySelector("model-viewer");
+
+        // Function to update the camera orbit based on screen size
+        function updateCameraOrbit() {
+          if (window.innerWidth < 900) {
+            // Adjust camera orbit for small screens (less than 600px)
+            modelViewer.setAttribute("camera-orbit", "-90deg 0deg 6m");
+          } else {
+            // Default camera orbit for larger screens
+            modelViewer.setAttribute("camera-orbit", "0deg 90deg 0m");
+          }
+        }
+
+        // Call the function initially
+        updateCameraOrbit();
+
+        // Listen for window resize event and update camera orbit accordingly
+        window.addEventListener("resize", updateCameraOrbit);
+      </script>
+    </section>
+
+    <section class="section3">
+      <div class="container reveal">
+        <div class="cards">
+          <div class="text-card">
+            <h3>Spaceport Team 134</h3>
+            <p>
+              <br />
+              <img src="projects//archangel/images/2.jpg" class="image1" />
+              <br />
+              <br />
+             Tom and Jerry was the team's first high-powered two-stage rocket, featuring an active booster that allowed the team to gain valuable experience and prepare for our next two-stage project.              <br />
+              <br />
+              <br />
+              <br />
+            </p>
+          </div>
+          <div class="text-card">
+            <h3>Active Booster</h3>
+            <p>
+              <br />
+              <img src="projects//archangel/images/3.jpg" class="image2" />
+              <br />
+              <br />
+              Following our first MPR two stage launch, the team decided to work on an active booster for future launches where the rocket was going at a greater altitude. This active booster features a GPS location, alongside its own recovery system enabling the team to recover both parts of the rocket in a re-flyable condition.  
               <br />
               <br />
               <br />
@@ -297,6 +394,7 @@
       </div>
     </section>
 
+    
     <!-- Javascript for controlling fade in of components with .reveal class tag-->
     <script type="text/javascript">
       window.addEventListener("scroll", reveal);
